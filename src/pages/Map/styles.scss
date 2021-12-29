@@ -1,0 +1,201 @@
+.home-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .navbar,
+  .navbar-burger {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px;
+
+    background-color: #F8F8F8;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.08);
+
+    .first-segment,
+    .last-segment {
+      display: flex;
+      height: 100%;
+
+      align-items: center;
+    }
+
+    .first-segment {   
+      justify-content: space-between;
+      gap: 20px;
+
+      a {
+        font: 500 18px 'Poppins', sans-serif;
+        cursor: pointer;
+
+        opacity: 0.7;
+        transition: opacity 0.2s linear, transform 0.2s linear;
+
+        &:hover {
+          transform: scale(1.05);
+          opacity: 1;
+        }
+      }
+
+      img {
+        cursor: pointer;
+      }
+    }
+
+    .last-segment {
+      gap: 20px;
+      position: relative;
+
+      .profile-picture {
+        border-radius: 50%;
+        height: 100%;
+        cursor: pointer;
+      }
+    }        
+  }
+
+  .navbar-burger {
+    .bm-item {
+      transition: font-weight 0.1s linear;
+
+      &:hover {
+        font-weight: 500;
+        color: unset;
+      }
+    }
+
+    .profile {
+      gap: 10px;
+      align-items: center;
+      cursor: pointer;
+
+      img {
+        border-radius: 50%;
+        height: 50px !important;
+      }
+    }
+
+    .download-app {
+      width: 100%;
+      height: unset;
+      // display: flex; is inline
+      justify-content: center;
+
+      position: absolute;
+      bottom: 30px;
+      right: 0;
+
+      img {
+        width: 80%;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:focus > img {
+        outline: 2px #835AFD solid;
+      } 
+    }
+  }
+
+  .content {
+    width: 1165px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px;
+
+    .leaflet-container {
+      width: 100%;
+      height: 325px;
+      border-radius: 18px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      width: 95%;
+
+      padding-top: 22px;
+
+      .card {
+        width: 250px;
+        height: 350px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 30px 0;
+        border-radius: 10px;
+
+        background-color: #E1DFFF;
+
+        transition: transform 0.1s linear;
+        backface-visibility: hidden;
+
+        &:hover {
+          transform: scale(1.02);
+          backface-visibility: hidden;
+        }
+
+        .card-header {
+          width: 50%;
+
+          img {
+            width: 100%;
+            border-radius: 50%;
+          }
+        }
+
+        .card-content {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          font: 400 18px 'Roboto', sans-serif;
+          margin-bottom: 10px;
+
+          .name {
+            font: 500 18px 'Poppins', sans-serif;
+          }
+
+          .inner {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+          }
+        }
+
+        .card-button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          width: 75%;
+          height: 60px;
+          border-radius: 15px;
+          background-color: #835AFD;
+
+          color: #fefefe;
+          font:  500 18px 'Roboto', sans-serif;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .home-page {
+    .content {
+      width: 90%;
+    }
+  }
+}
